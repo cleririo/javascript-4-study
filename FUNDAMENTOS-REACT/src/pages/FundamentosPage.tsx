@@ -8,7 +8,7 @@ import { SegundoComponente } from "../components/SegundoComponente";
 import { Timer } from "../components/Timer";
 import { Toggle } from "../components/Toggle";
 
-export function ConteudoPage(){
+export function FundamentosPage(){
     {
         var pessoa = {
           nome: "Clério",
