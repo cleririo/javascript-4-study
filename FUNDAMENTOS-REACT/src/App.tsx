@@ -9,6 +9,12 @@ import { Timer } from "./components/Timer";
 import { Toggle } from "./components/Toggle";
 
 export function App() {
+  {
+    var pessoa = {
+      nome: "Clério",
+      notas: [10, 9, 8]
+    };
+  }
   return  (
     <>
     <Card title="Primeiro componente">
@@ -18,7 +24,7 @@ export function App() {
       <SegundoComponente />
     </Card>
     <Card title="Props e renderização">
-      <ComponenteComProps nome="Clério" notas={[10,9,8]}/>
+    <ComponenteComProps nome={pessoa.nome} notas={pessoa.notas}/>
     </Card>
     <Card title="Lista e Keys">
       <Lista />
