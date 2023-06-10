@@ -1,46 +1,25 @@
-import { Card } from "./components/Card";
-import { ComponenteComProps } from "./components/ComponenteComProps";
-import { ComponenteControlado } from "./components/ComponenteControlado";
-import { Contador } from "./components/Contador";
-import { Lista } from "./components/Lista";
-import { PrimeiroComponente } from "./components/PrimeiroComponente";
-import { SegundoComponente } from "./components/SegundoComponente";
-import { Timer } from "./components/Timer";
-import { Toggle } from "./components/Toggle";
+import { useState } from "react";
+import { ConteudoPage } from "./pages/ConteudoPage";
+import { ExercicioPage } from "./pages/ExercicioPage";
+import styles from "./styles/App.module.css"
+
+const paginas = {
+  "conteudo": <ConteudoPage />,
+  "exercicio": <ExercicioPage />
+}
 
 export function App() {
-  {
-    var pessoa = {
-      nome: "Clério",
-      notas: [10, 9, 8]
-    };
-  }
-  return  (
+  const [paginaAtual, setPaginaAtual] = useState<keyof typeof paginas>("exercicio");
+
+  return(
     <>
-    <Card title="Primeiro componente">
-      <PrimeiroComponente />
-    </Card>
-    <Card title="JSX">
-      <SegundoComponente />
-    </Card>
-    <Card title="Props e renderização">
-    <ComponenteComProps nome={pessoa.nome} notas={pessoa.notas}/>
-    </Card>
-    <Card title="Lista e Keys">
-      <Lista />
-    </Card>
-    <Card title="State">
-      <Contador />
-    </Card>
-    <Card title="Componente controlado">
-      <ComponenteControlado />
-    </Card>
-    <Card title="Toggle">
-      <Toggle />
-    </Card>
-    <Card title="Timer">
-      <Timer />
-    </Card>
+      <nav className={styles.menu}>
+        <ul>
+          <li onClick={()=> setPaginaAtual("conteudo")}>Conteudo</li>
+          <li onClick={()=> setPaginaAtual("exercicio")}>Exercicio</li>
+        </ul>
+      </nav>
+    <>{ paginas[paginaAtual] }</>
     </>
   );
 }
