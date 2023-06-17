@@ -1,0 +1,12 @@
+.container {
+    height: 100 vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form{
+    background-color: #fff;
+    padding: 16px;
+    width: 40%;
+}

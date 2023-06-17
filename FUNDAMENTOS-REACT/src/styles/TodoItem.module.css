@@ -1,0 +1,17 @@
+.container {
+    padding: 5px;
+}
+
+.container:hover{
+    filter: brightness(110%);
+}
+
+.button-primary{
+    background-color: green;
+    border-color: green;
+    color: #fff;
+}
+
+.row {
+    height: 50px;
+}

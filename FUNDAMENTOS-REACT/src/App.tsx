@@ -4,16 +4,18 @@ import { ExercicioPage } from "./pages/ExercicioPage";
 import styles from "./styles/App.module.css"
 import { HooksPage } from "./pages/HooksPage";
 import { ExerciciosHookPage } from "./pages/ExerciciosHookPage";
+import { HooksDesafioPage } from "./pages/HooksDesafioPage";
 
 const paginas = {
   "fundamentos": <FundamentosPage/>,
   "exercicio": <ExercicioPage />,
   "hooks": <HooksPage />,
-  "exerciciosHooks": <ExerciciosHookPage />
+  "exerciciosHooks": <ExerciciosHookPage />,
+  "desafioHooks": <HooksDesafioPage/>,
 }
 
 export function App() {
-  const [paginaAtual, setPaginaAtual] = useState<keyof typeof paginas>("hooks");
+  const [paginaAtual, setPaginaAtual] = useState<keyof typeof paginas>("desafioHooks");
 
   return(
     <>
@@ -23,6 +25,7 @@ export function App() {
           <li onClick={()=> setPaginaAtual("exercicio")}>Exercicio</li>
           <li onClick={()=> setPaginaAtual("hooks")}>Hooks</li>
           <li onClick={()=> setPaginaAtual("exerciciosHooks")}>Exercicios Hooks</li>
+          <li onClick={()=> setPaginaAtual("desafioHooks")}>Desafio Hooks</li>
         </ul>
       </nav>
     <>{ paginas[paginaAtual] }</>
